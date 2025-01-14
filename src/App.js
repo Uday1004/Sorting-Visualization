@@ -2,11 +2,7 @@ import React from 'react'
 import LandignPage from './Landing Page/Page'
 
 function App() {
-  return (
-    <div>
-      <LandignPage/>
-    </div>
-  )
+  return <LandignPage />
 }
 
 export default App
