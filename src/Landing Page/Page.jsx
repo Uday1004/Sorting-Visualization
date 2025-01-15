@@ -31,12 +31,12 @@ function LandignPage() {
         className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div className="h-full px-3 py-2 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>
               <div
                 // href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-5"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-3"
               >
                 <svg
                   className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -59,27 +59,21 @@ function LandignPage() {
                 // data-collapse-toggle="dropdown-example"
                 // onclick="this.nextElementSibling.classList.toggle('hidden')"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 21"
-                >
-                  <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                </svg>
+                <i class="bi bi-search fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
 
-                <form class="max-w-sm mx-auto">
+                <form class="max-w-sm ml-4">
                   <select
                     // disabled
                     id="countries_disabled"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
-                    <option selected>Choose a country</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <option value="FR">France</option>
-                    <option value="DE">Germany</option>
+                    <option selected>Sorting Algorithms</option>
+                    <option value="US">Selection Sort</option>
+                    <option value="CA">Merge Sort</option>
+                    <option value="FR">Quick Sort</option>
+                    <option value="DE">Bubble Sort</option>
+                    <option value="DE">Heap Sort</option>
+                    <option value="DE">Insertion Sort</option>
                   </select>
                 </form>
               </div>
@@ -92,51 +86,35 @@ function LandignPage() {
                 // data-collapse-toggle="dropdown-example"
                 // onclick="this.nextElementSibling.classList.toggle('hidden')"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 21"
-                >
-                  <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                </svg>
+                <i class="bi bi-bar-chart-line fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white "></i>
 
-                <form class="max-w-sm mx-auto">
+                <form class="max-w-sm ml-4">
                   <select
                     // disabled
                     id="countries_disabled"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
-                    <option selected>Choose a country</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <option value="FR">France</option>
-                    <option value="DE">Germany</option>
+                    <option selected>Select Visualization</option>
+                    <option value="US">Graph</option>
+                    <option value="CA">Bar</option>
+                    <option value="FR">Line</option>
+                    <option value="DE">Stem</option>
+                    <option value="DE">Scatter</option>
                   </select>
                 </form>
               </div>
             </li>
-             
-          
-            <li>
-              <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
-                </svg>
 
-                <form class="max-w-sm mx-3">
+            <li>
+              <div className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <i class="bi bi-file-bar-graph fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
+
+                <form class="max-w-sm w-full ml-4">
                   <input
                     type="number"
                     id="number-input"
                     aria-describedby="helper-text-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-100 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Size of Array"
                     required
                   />
@@ -148,21 +126,14 @@ function LandignPage() {
                 href="#"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 18"
-                >
-                  <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
-                </svg>
+                 
+                <i class="bi bi-alarm fs-5 w-5 h-5 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
                 <span>
                   <label
-                    className="form-label p-2 mx-2 h-5 items-center"
+                    className="text-gray p-2 mx-2 h-5 items-center"
                     for="customRange2"
                   >
-                    Example range
+                    Speed of Execution
                   </label>
                 </span>
               </div>
@@ -172,76 +143,87 @@ function LandignPage() {
                   type="range"
                   className="form-range px-2"
                   min="0"
-                  max="5"
+                  max="4"
                   id="customRange2"
-                  style={{width:'200px'}}
+                  style={{ width: "200px" }}
                 />
               </div>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 20"
-                >
-                  <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z" />
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Products</span>
-              </a>
+              <button className="flex items-center btn btn-primary mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+                <div className="flex-1  text-center">Generate Dataset</div>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"
-                  />
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Sign In</span>
-              </a>
+              <button className="flex items-center btn btn-success mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+                <div className="flex-1  text-center">Start</div>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              <button className="flex items-center btn btn-warning mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+                <div className="flex-1  text-center">Reset</div>
+              </button>
+            </li>
+            <li>
+              <button className="flex items-center btn btn-danger mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+                <div className="flex-1  text-center ">Stop</div>
+              </button>
+            </li>
+            <li>
+              <div
+                class="flex items-center mt-4 text-sm text-yello-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400"
+                role="alert"
               >
-                <svg
-                  className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
-                  <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />
-                  <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
-              </a>
+                {/* <span class="sr-only">Info</span> */}
+                <div>
+                <i class="bi bi-exclamation-triangle fs-6 mr-2 dark:text-yellow-400 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
+                  <span class="">
+                    For visualization by entering data yourself please enter the
+                    data separated by (,) comma
+                  </span>
+                  <div className="mt-1 bg-gray-700 p-1 "> Ex: 1, 2, 3,...</div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </aside>
 
-      <div className="p-4 sm:ml-64"></div>
+      <div className="sm:ml-64 flex justify-center p-4 bg-gray-800">
+        <div className="text-center w-full">
+          <p className="text-gray-900 text-6xl dark:text-white">
+            Sorting Algorithm Visualization
+          </p>
+        </div>
+      </div>
+      <div className="container w-full">
+        <div
+          className="col-10 sm:ml-64 h-full bg-white-700 flex justify-center items-center"
+          style={{ height: "60vh" }}
+        >
+          <img
+            src="https://design.mindsphere.io/patterns-chapters/chart/images/data-visualisation-usage-basic-bar-chart-vertical.png"
+            className="object-cover h-70 "
+            alt=""
+          />
+        </div>
+      </div>
+      <div className="sm:ml-64 flex bg-gray-800 min-h-[24.5vh] items-center justify-center">
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full text-center p-4">
+          <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
+            Time Complexity: <span className="mx-2">&#123;Time&#125;</span>
+          </div>
+          <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
+            Space Complexity: <span className="mx-2">&#123;Space&#125;</span>
+          </div>
+          <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
+            Comparison Count: <span className="mx-2">&#123;number&#125;</span>
+          </div>
+          <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
+            Efficiency: <span className="mx-2">&#123;String&#125;</span>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
