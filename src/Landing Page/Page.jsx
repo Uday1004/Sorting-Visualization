@@ -1,6 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  bubbleSort,
+  insertionSort,
+  selectionSort,
+  mergeSort,
+  quickSort,
+  heapSort,
+} from "../Sorting/SortingAlgorithms";
+import SortingChart from "../Sorting/SortingChart";
+import { generateRandomArray } from "../Sorting/SortingVisualize";
 
 function LandignPage() {
+  const [data, setData] = React.useState(null);
+  const [sizeOfArray, setSizeOfArray] = React.useState(10);
+  const [speed, setSpeed] = React.useState(200);
+  const [selectalgo, setSelectalgo] = React.useState("");
+
+  const delay = 2000 - speed;
+
+  const handleSort = () => {
+    switch (selectalgo) {
+      case "BS":
+        bubbleSort(data, setData, delay);
+        break;
+      case "SS":
+        selectionSort(data, setData, delay);
+        break;
+      case "IS":
+        insertionSort(data, setData, delay);
+        break;
+      case "MS":
+        mergeSort(data, setData, delay);
+        break;
+      case "QS":
+        quickSort(data, setData, delay);
+        break;
+      case "HS":
+        heapSort(data, setData, delay);
+        break;
+      default:
+        alert("Please select a sorting algorithm");
+    }
+  };
+
   return (
     <>
       <button
@@ -19,8 +61,8 @@ function LandignPage() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            clip-rule="evenodd"
-            fill-rule="evenodd"
+            clipRule="evenodd"
+            fillRule="evenodd"
             d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
           ></path>
         </svg>
@@ -34,10 +76,7 @@ function LandignPage() {
         <div className="h-full px-3 py-2 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>
-              <div
-                // href="#"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-3"
-              >
+              <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-3">
                 <svg
                   className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                   aria-hidden="true"
@@ -52,54 +91,22 @@ function LandignPage() {
               </div>
             </li>
             <li>
-              <div
-                type=""
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white "
-                // aria-controls="dropdown-example"
-                // data-collapse-toggle="dropdown-example"
-                // onclick="this.nextElementSibling.classList.toggle('hidden')"
-              >
-                <i class="bi bi-search fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
+              <div className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white ">
+                <i className="bi bi-search fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
 
-                <form class="max-w-sm ml-4">
+                <form className="max-w-sm ml-4">
                   <select
-                    // disabled
                     id="countries_disabled"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange={(e) => setSelectalgo(e.target.value)}
                   >
                     <option selected>Sorting Algorithms</option>
-                    <option value="US">Selection Sort</option>
-                    <option value="CA">Merge Sort</option>
-                    <option value="FR">Quick Sort</option>
-                    <option value="DE">Bubble Sort</option>
-                    <option value="DE">Heap Sort</option>
-                    <option value="DE">Insertion Sort</option>
-                  </select>
-                </form>
-              </div>
-            </li>
-            <li>
-              <div
-                type=""
-                className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-white "
-                // aria-controls="dropdown-example"
-                // data-collapse-toggle="dropdown-example"
-                // onclick="this.nextElementSibling.classList.toggle('hidden')"
-              >
-                <i class="bi bi-bar-chart-line fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white "></i>
-
-                <form class="max-w-sm ml-4">
-                  <select
-                    // disabled
-                    id="countries_disabled"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  >
-                    <option selected>Select Visualization</option>
-                    <option value="US">Graph</option>
-                    <option value="CA">Bar</option>
-                    <option value="FR">Line</option>
-                    <option value="DE">Stem</option>
-                    <option value="DE">Scatter</option>
+                    <option value="BS">Bubble Sort</option>
+                    <option value="SS">Selection Sort</option>
+                    <option value="IS">Insertion Sort</option>
+                    <option value="MS">Merge Sort</option>
+                    <option value="QS">Quick Sort</option>
+                    <option value="HS">Heap Sort</option>
                   </select>
                 </form>
               </div>
@@ -107,16 +114,22 @@ function LandignPage() {
 
             <li>
               <div className="flex items-center w-full p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <i class="bi bi-file-bar-graph fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
+                <i className="bi bi-file-bar-graph fs-5 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
 
-                <form class="max-w-sm w-full ml-4">
+                <form className="max-w-sm w-full ml-4">
                   <input
                     type="number"
                     id="number-input"
                     aria-describedby="helper-text-explanation"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-100 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Size of Array"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-100 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Size of Array (1-50)"
                     required
+                    max={50}
+                    min={1}
+                    onChange={(e) => {
+                      const value = Math.max(1, Math.min(50, e.target.value));
+                      setSizeOfArray(value);
+                    }}
                   />
                 </form>
               </div>
@@ -126,14 +139,13 @@ function LandignPage() {
                 href="#"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                 
-                <i class="bi bi-alarm fs-5 w-5 h-5 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
+                <i className="bi bi-alarm fs-5 w-5 h-5 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
                 <span>
                   <label
                     className="text-gray p-2 mx-2 h-5 items-center"
-                    for="customRange2"
+                    htmlFor="customRange2"
                   >
-                    Speed of Execution
+                    Speed (sec)
                   </label>
                 </span>
               </div>
@@ -142,42 +154,57 @@ function LandignPage() {
                 <input
                   type="range"
                   className="form-range px-2"
-                  min="0"
-                  max="4"
+                  min="200"
+                  max="1000"
+                  step="200"
                   id="customRange2"
                   style={{ width: "200px" }}
+                  value={speed}
+                  onChange={(e) => setSpeed(parseInt(e.target.value))}
                 />
+                <div className="flex justify-between text-xs px-1 mt-0">
+                  <span>200s</span>
+                  <span>400s</span>
+                  <span>600s</span>
+                  <span>800s</span>
+                  <span>1000s</span>
+                </div>
               </div>
             </li>
             <li>
-              <button className="flex items-center btn btn-primary mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+              <button
+                className="flex items-center btn btn-primary mx-auto px-2 w-100 justify-content-center rounded-lg  text-white"
+                onClick={() => setData(generateRandomArray(sizeOfArray))}
+              >
                 <div className="flex-1  text-center">Generate Dataset</div>
               </button>
             </li>
             <li>
-              <button className="flex items-center btn btn-success mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+              <button
+                className="flex items-center btn btn-success mx-auto px-2 w-100 justify-content-center  rounded-lg  text-white"
+                onClick={handleSort}
+              >
                 <div className="flex-1  text-center">Start</div>
               </button>
             </li>
-            <li>
+            {/* <li>
               <button className="flex items-center btn btn-warning mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
                 <div className="flex-1  text-center">Reset</div>
               </button>
-            </li>
+            </li> */}
             <li>
-              <button className="flex items-center btn btn-danger mx-auto px-2 w-100 justify-content-center text-gray-900 rounded-lg  text-white">
+              <button className="flex items-center btn btn-danger mx-auto px-2 w-100 justify-content-center text-white rounded-lg ">
                 <div className="flex-1  text-center ">Stop</div>
               </button>
             </li>
             <li>
               <div
-                class="flex items-center mt-4 text-sm text-yello-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400"
+                className="flex items-center mt-4 text-sm text-yello-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400"
                 role="alert"
               >
-                {/* <span class="sr-only">Info</span> */}
                 <div>
-                <i class="bi bi-exclamation-triangle fs-6 mr-2 dark:text-yellow-400 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:text-gray-400 dark:group-hover:text-white"></i>
-                  <span class="">
+                  <i className="bi bi-exclamation-triangle fs-6 mr-2 dark:text-yellow-400 w-5 h-6 group-hover:text-gray-400 transitionis duration-75 dark:group-hover:text-white"></i>
+                  <span className="">
                     For visualization by entering data yourself please enter the
                     data separated by (,) comma
                   </span>
@@ -192,7 +219,7 @@ function LandignPage() {
       <div className="sm:ml-64 flex justify-center p-4 bg-gray-800">
         <div className="text-center w-full">
           <p className="text-gray-900 text-6xl dark:text-white">
-            Sorting Algorithm Visualization
+            Sorting Visualization
           </p>
         </div>
       </div>
@@ -201,11 +228,7 @@ function LandignPage() {
           className="col-10 sm:ml-64 h-full bg-white-700 flex justify-center items-center"
           style={{ height: "60vh" }}
         >
-          <img
-            src="https://design.mindsphere.io/patterns-chapters/chart/images/data-visualisation-usage-basic-bar-chart-vertical.png"
-            className="object-cover h-70 "
-            alt=""
-          />
+          {data === null ? null : <SortingChart data={data} />}
         </div>
       </div>
       <div className="sm:ml-64 flex bg-gray-800 min-h-[24.5vh] items-center justify-center">
@@ -229,3 +252,5 @@ function LandignPage() {
 }
 
 export default LandignPage;
+
+
