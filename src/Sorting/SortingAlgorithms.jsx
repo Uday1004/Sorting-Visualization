@@ -1,8 +1,9 @@
 const animationSorting = (animations, setArray, speed) => {
+    const delay=1200-speed;
     animations.forEach((animation, i) => {
         setTimeout(() => {
             setArray([...animation]);
-        }, i * speed);
+        }, i * delay);
     });
 }
 
@@ -20,8 +21,8 @@ export const bubbleSort = (array, setArray, speed=200) => {
             }
         }
     }
-
     animationSorting(animations, setArray, speed);
+    setArray(tempArray);
 }
 
 
@@ -46,6 +47,7 @@ export const selectionSort = (array, setArray, speed) => {
         animations.push([...tempArray]);
     }
 
+    setArray(tempArray);
     animationSorting(animations, setArray, speed);
 }
 
@@ -69,6 +71,7 @@ export const insertionSort = (array, setArray, speed) => {
         animations.push([...tempArray]);
     }
 
+    setArray(tempArray);
     animationSorting(animations, setArray, speed);
 }
 
@@ -135,6 +138,7 @@ export const mergeSort = (array, setArray, speed) => {
     }
 
     mergeSortHelper(temp, 0, temp.length - 1);
+    setArray(temp);
     animationSorting(animations, setArray, speed);
 }
 
@@ -176,6 +180,7 @@ export const quickSort = (array, setArray, speed) => {
     }
 
     quickSortHelper(tempArray, 0, tempArray.length - 1);
+    setArray(tempArray);
     animationSorting(animations, setArray, speed);
 }
 
@@ -227,6 +232,7 @@ export const heapSort = (array, setArray, speed) => {
     }
 
     heapSortHelper(tempArray);
+    setArray(tempArray);
     animationSorting(animations, setArray, speed);
 }
 

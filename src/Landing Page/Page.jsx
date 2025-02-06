@@ -16,32 +16,65 @@ function LandignPage() {
   const [speed, setSpeed] = React.useState(200);
   const [selectalgo, setSelectalgo] = React.useState("");
 
-  const delay = 2000 - speed;
-
   const handleSort = () => {
     switch (selectalgo) {
       case "BS":
-        bubbleSort(data, setData, delay);
+        bubbleSort(data, setData, speed);
         break;
       case "SS":
-        selectionSort(data, setData, delay);
+        selectionSort(data, setData, speed);
         break;
       case "IS":
-        insertionSort(data, setData, delay);
+        insertionSort(data, setData, speed);
         break;
       case "MS":
-        mergeSort(data, setData, delay);
+        mergeSort(data, setData, speed);
         break;
       case "QS":
-        quickSort(data, setData, delay);
+        quickSort(data, setData, speed);
         break;
       case "HS":
-        heapSort(data, setData, delay);
+        heapSort(data, setData, speed);
         break;
       default:
         alert("Please select a sorting algorithm");
     }
   };
+  function getTimeComplexity(algorithm) {
+    switch (algorithm) {
+      case "BS":
+        return "O(n^2)";
+      case "SS":
+        return "O(n^2)";
+      case "IS":
+        return "O(n^2)";
+      case "MS":
+        return "O(n log n)";
+      case "QS":
+        return "O(n^2)"; // worst case, average is O(n log n)
+      case "HS":
+        return "O(n log n)";
+      default:
+        return "N/A";
+    }
+  }
+  
+  function getSpaceComplexity(algorithm) {
+    switch (algorithm) {
+      case "BS":
+      case "SS":
+      case "IS":
+        return "O(1)";
+      case "MS":
+        return "O(n)";
+      case "QS":
+        return "O(log n)";
+      case "HS":
+        return "O(1)";
+      default:
+        return "N/A";
+    }
+  }
 
   return (
     <>
@@ -74,7 +107,7 @@ function LandignPage() {
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-2 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium">
+          <ul className="space-y-2 font-medium mt-2">
             <li>
               <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mb-3">
                 <svg
@@ -100,7 +133,7 @@ function LandignPage() {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     onChange={(e) => setSelectalgo(e.target.value)}
                   >
-                    <option selected>Sorting Algorithms</option>
+                    <option value="" defaultValue>Sorting Algorithms</option>
                     <option value="BS">Bubble Sort</option>
                     <option value="SS">Selection Sort</option>
                     <option value="IS">Insertion Sort</option>
@@ -179,7 +212,7 @@ function LandignPage() {
                 <div className="flex-1  text-center">Generate Dataset</div>
               </button>
             </li>
-            <li>
+            <li >
               <button
                 className="flex items-center btn btn-success mx-auto px-2 w-100 justify-content-center  rounded-lg  text-white"
                 onClick={handleSort}
@@ -192,12 +225,12 @@ function LandignPage() {
                 <div className="flex-1  text-center">Reset</div>
               </button>
             </li> */}
-            <li>
+            {/* <li>
               <button className="flex items-center btn btn-danger mx-auto px-2 w-100 justify-content-center text-white rounded-lg ">
                 <div className="flex-1  text-center ">Stop</div>
               </button>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <div
                 className="flex items-center mt-4 text-sm text-yello-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-400"
                 role="alert"
@@ -211,14 +244,14 @@ function LandignPage() {
                   <div className="mt-1 bg-gray-700 p-1 "> Ex: 1, 2, 3,...</div>
                 </div>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </aside>
 
       <div className="sm:ml-64 flex justify-center p-4 bg-gray-800">
         <div className="text-center w-full">
-          <p className="text-gray-900 text-6xl dark:text-white">
+          <p className="text-gray-900 text-6xl dark:text-white mysection">
             Sorting Visualization
           </p>
         </div>
@@ -228,23 +261,24 @@ function LandignPage() {
           className="col-10 sm:ml-64 h-full bg-white-700 flex justify-center items-center"
           style={{ height: "60vh" }}
         >
-          {data === null ? null : <SortingChart data={data} />}
+          {data === null ? null : <SortingChart data={data}/>}
         </div>
       </div>
       <div className="sm:ml-64 flex bg-gray-800 min-h-[24.5vh] items-center justify-center">
         <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full text-center p-4">
           <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
-            Time Complexity: <span className="mx-2">&#123;Time&#125;</span>
+            Time Complexity: <span className="mx-2">{getTimeComplexity(selectalgo)}</span>
           </div>
           <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
-            Space Complexity: <span className="mx-2">&#123;Space&#125;</span>
+            Space Complexity: <span className="mx-2">{getSpaceComplexity(selectalgo)}</span>
           </div>
-          <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
+
+          {/* <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
             Comparison Count: <span className="mx-2">&#123;number&#125;</span>
           </div>
           <div className="col-span-1 text-gray-900 text-2xl dark:text-white bg-gray-700 rounded p-4">
             Efficiency: <span className="mx-2">&#123;String&#125;</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -1,9 +1,10 @@
 import React from 'react'
 import LandignPage from './Landing Page/Page'
-// import SortingVisualize from './Sorting/SortingVisualize'
+import './App.css'
+
 
 function App() {
-  return <LandignPage/>
+  return <LandignPage />
 }
 
 export default App
