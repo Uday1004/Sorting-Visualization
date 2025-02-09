@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+# Sorting Algorithm Visualization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Project Overview
 
-## Available Scripts
+This project is a **Sorting Algorithm Visualizer** built using **React**. It helps users visualize different sorting algorithms step by step with animations. The supported sorting algorithms include:
 
-In the project directory, you can run:
+-   **Bubble Sort**
+    
+-   **Selection Sort**
+    
+-   **Insertion Sort**
+    
+-   **Merge Sort**
+    
+-   **Quick Sort**
+    
+-   **Heap Sort**
+    
 
-### `npm start`
+Users can:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   Select a sorting algorithm.
+    
+-   Adjust the array size and sorting speed.
+    
+-   Start, stop, and reset sorting at any time.
+    
+-   Observe comparisons and swaps in real time.
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+----------
 
-### `npm test`
+## 🚀 Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Make sure you have the following installed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   **Node.js** (LTS version recommended)
+    
+-   **npm** or **yarn**
+    
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Steps to Run the Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  **Clone the repository**
+    
+    ```
+    git clone https://github.com/your-username/sorting-visualizer.git
+    cd sorting-visualizer
+    ```
+    
+2.  **Install dependencies**
+    
+    ```
+    npm install   # or yarn install
+    ```
+    
+3.  **Start the development server**
+    
+    ```
+    npm start   # or yarn start
+    ```
+    
+    The app will open in your default browser at `http://localhost:3000/`.
+    
 
-### `npm run eject`
+----------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ✅ Running Test Cases
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project uses **Jest** and **React Testing Library** for unit testing.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running Tests
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run all tests, use:
 
-## Learn More
+```
+npm test   # or yarn test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Test Coverage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To check test coverage, run:
 
-### Code Splitting
+```
+npm test -- --coverage
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This will generate a detailed report on tested components and functions.
 
-### Analyzing the Bundle Size
+----------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧪 Test Cases Implemented
 
-### Making a Progressive Web App
+### Sorting Algorithm Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✔️ **Bubble Sort, Quick Sort, Merge Sort, etc.**
 
-### Advanced Configuration
+-   Sorting correctness for positive, negative, and duplicate values.
+    
+-   Sorting an already sorted array.
+    
+-   Sorting an empty or single-element array.
+    
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### UI & Functionality Tests
 
-### Deployment
+✔️ **Sorting Visualization Component**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-   Clicking `Generate Dataset` updates the dataset and displays the sorting chart.
+    
+-   Clicking `Start` triggers sorting animation.
+    
+-   Clicking `Stop & Reset` stops sorting and resets the array.
+    
+-   Adjusting speed changes sorting animation timing.
+    
+-   Changing algorithm updates the selection state.
+    
 
-### `npm run build` fails to minify
+----------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🛠️ Technologies Used
+
+-   **React** (Frontend framework)
+    
+-   **Jest & React Testing Library** (Testing framework)
+    
+-   **TailwindCSS** (Styling)
+    
+
+----------
+
+## 📜 License
+
+This project is **open-source** under the MIT License.
+
+----------
+
+## 📬 Contact
+
+For any queries, reach out at: `your-email@example.com` or open an issue in the repository.
